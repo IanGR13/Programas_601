@@ -1,33 +1,32 @@
 
 package pkg3.v2.trifiv;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
+
+
 
 
 public class V2TRIFIV {
 
     
-    public static void main(String[] args) throws IOException {
-        BufferedReader buf=new BufferedReader(new InputStreamReader(System.in));
-        
-        int num;
-        
+    public static void main(String[] args)  {
+        Scanner sc=new Scanner(System.in);
+       int num1;
+       
         System.out.println("Ingrese un numero");
-        num=Integer.parseInt(buf.readLine());
+        num1=sc.nextInt();
         
         
         
-        if(num%5==0 && num%3==0){
+        if(num1%5==0 && num1%3==0){
             System.out.println("TRIFIV");
         }
         
-        if(num%5==0){
+        else if(num1%5==0){
             System.out.println("FIV");
         }
         
-         if(num%3==0){
+         else if(num1%3==0){
              
              System.out.println("TRI");
              
