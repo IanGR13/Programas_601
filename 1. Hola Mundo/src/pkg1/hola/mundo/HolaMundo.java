@@ -1,0 +1,14 @@
+
+package pkg1.hola.mundo;
+
+
+public class HolaMundo {
+
+    
+    public static void main(String[] args) {
+        
+        System.out.println("Hola Mundo c:");
+        
+    }
+    
+}
