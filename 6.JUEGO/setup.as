@@ -1,37 +1,59 @@
 ﻿package  {
 	
+	
 	import flash.display.MovieClip;
+	import flash.events.Event;
+	
 	
 	
 	public class setup extends MovieClip {
 		
-		private var fondo_new: fondo = new fondo();
+		private var fondo_new:fondo = new fondo();
 		private var piso_new: piso = new piso();
+		static var protagonista_new: protagonista = new protagonista();
 		private var antagonista_new: antagonista = new antagonista();
-		private var protagonista_new: protagonista = new protagonista();
-		private var bala_new: bala = new bala();
+		
+		
+		static var puntos:Number=0;
+		static var puntos_box_new:puntos_box = new puntos_box();
+		
 		
 		public function setup() {
 			
+			
 			addChild(fondo_new);
 			addChild(piso_new);
-			addChild(antagonista_new);
 			addChild(protagonista_new);
-			addChild(bala_new);
+			addChild(antagonista_new);
 			
-			piso_new.y=358;
-			piso_new.x=270;
+			addChild(puntos_box_new);
 			
-			fondo_new.y=200;
-			fondo_new.x=274;
+			puntos_box_new.x=100;
+			puntos_box_new.y=17;
+			puntos_box_new.puntostxt.text= String(puntos);
 			
-			protagonista_new.y=350;
-			protagonista_new.x=250;
+			fondo_new.y=150;
+			fondo_new.x=275;
 			
-			antagonista_new.y=30;
-			antagonista_new.x=250;
+			piso_new.y=385;
+			piso_new.x=275;
+			
+			protagonista_new.y=330;
+			protagonista_new.x=275;
+			
+			antagonista_new.y=40;
+			antagonista_new.x=275;
+			
+			this.addEventListener(Event.ENTER_FRAME, actualiza_puntos);
 			
 		}
+		
+		public function actualiza_puntos(e:Event){
+			puntos_box_new.puntostxt.text=String(puntos);
+		}
+		
+		
+	
 	}
 	
 }
